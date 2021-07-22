@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="StyleSheet1.css" />
+    <title>SpeechTyper</title>
+</head>
+<body>
+    <h1>Speech Typer...</h1>
+    <div id="info">
+        <p id="info_start">Click on the microphone icon and begin speaking.</p>
+        <p id="info_speak_now">Speak now.</p>
+        <p id="info_no_speech">No speech was detected. you may need to adjust your microphone settings.</p>
+        <p id="info_no_microphone">No microphone was found. Ensure that a microphone is installed and that microphone settings are configured correctly.</p>
+        <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+        <p id="info_denied">Permission to use microphone was denied.</p>
+        <p id="info_blocked">Permission to use microphone is blocked.</p>
+        <p id="info_upgrade">SpeechTyper is not supported bt this browser.</p>
+    </div>
+    <div>
+        <button id="start_button" onclick="startButton(event)">
+            <img id="start_img" src="mic.gif" alt="Start">
+        </button>
+    </div>
+    <div id="results">
+        <span id="final_span"></span>
+        <span id="interim_span"></span>
+        <p>
+    </div>
+    <div>
+        <div>
+            <select id="select_language" onchange="updateCountry()"></select>
+            <select id="select_dialect"></select>
+        </div>
+    </div>
+    <script src="JavaScript1.js"></script>
+</body>
+</html>
