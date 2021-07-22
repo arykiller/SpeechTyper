@@ -104,10 +104,6 @@ else {
             range.selectNode(document.getElementById('final_span'));
             window.getSelection().addRange(range);
         }
-        /*if (create_email) {
-            create_email = false;
-            createEmail();
-        }*/
     };
     recognition.onresult = function (event) {
         var interim_transcript = '';
@@ -156,6 +152,5 @@ function startButton(event) {
     interim_span.innerHTML = '';
     start_img.src = 'mic-slash.gif';
     showInfo('info_allow');
-    //showButtons('none');
     start_timestamp = event.timeStamp;
 }
