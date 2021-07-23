@@ -84,12 +84,38 @@ select {
     height: 75px;
     width: 75px;
     border-radius: 50%;
-    border: 10px solid #a8aaf99e;
+    border: 5px solid #a8aaf99e;
 }
 
-    .roundButton:hover {
+.roundButton:hover {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        border: 10px solid #a8aaf9;
+        border: 5px solid #a8aaf9;
         cursor: pointer;
         color: #a8aaf9;
+}
+
+#start_button {
+    animation: micOn 1s infinite;
+}
+
+@keyframes micOn {
+    0% {
+        border: 10px solid #a8aaf99e;
     }
+
+    25% {
+        border: 8px solid #a8aaf9bf;
+    }
+
+    50% {
+        border: 6px solid #a8aaf9d4;
+    }
+
+    75% {
+        border: 4px solid #a8aaf9e3;
+    }
+
+    100% {
+        border: 1px solid #a8aaf9;
+    }
+}
