@@ -4,6 +4,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SpeechTyper</title>
@@ -11,11 +12,9 @@
 <body>
     <div class="container">
         <h1>Speech Typer...</h1>
-        <div>
-            <div>
+        <div class="lang_container">
                 <select id="select_language" onchange="updateCountry()"></select>
                 <select id="select_dialect"></select>
-            </div>
         </div>
         <div id="info">
             <p id="info_start">Click on the microphone icon and begin speaking.</p>
@@ -27,8 +26,8 @@
             <p id="info_blocked">Permission to use microphone is blocked.</p>
             <p id="info_upgrade">SpeechTyper is not supported bt this browser.</p>
         </div>
-        <div>
-            <button id="start_button" onclick="startButton(event)">
+        <div class="start_container">
+            <button class="roundButton" id="start_button" onclick="startButton(event)">
                 <i class="fa fa-microphone"></i>
             </button>
         </div>
@@ -37,7 +36,6 @@
             <span id="interim_span"></span>
             <p>
         </div>
-
     </div>
     <script src="Script.js"></script>
 </body>
