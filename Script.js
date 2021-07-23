@@ -14,6 +14,7 @@ select_language.selectedIndex = 0;
 updateCountry();
 select_dialect.selectedIndex = 0;
 showInfo('info_start');
+start_button.style.webkitAnimationPlayState = "paused";
 
 function updateCountry() {
     for (var i = select_dialect.options.length - 1; i >= 0; i--) {
@@ -62,17 +63,17 @@ else {
     recognition.onstart = function () {
         recognizing = true;
         showInfo('info_speak_now');
-        //start_img.src = 'mic-animate.gif';
+        start_button.style.webkitAnimationPlayState = "running";
     };
 
     recognition.onerror = function (event) {
         if (event.error == 'no-speech') {
-            //start_img.src = 'mic.gif';
+            start_button.style.webkitAnimationPlayState = "paused";
             showInfo('info_no_speech');
             ignore_onend = true;
         }
         if (event.error == 'audio-capture') {
-            //start_img.src = mic.gif;
+            start_button.style.webkitAnimationPlayState = "paused";
             showInfo('info_no_microphone')
             ignore_onend = true;
         }
@@ -91,7 +92,7 @@ else {
         if (ignore_onend) {
             return;
         }
-        //start_img.src = 'mic.gif';
+        start_button.style.webkitAnimationPlayState = "paused";
         if (!final_transcript) {
             showInfo('info_start');
             return;
@@ -117,9 +118,6 @@ else {
         final_transcript = capitalize(final_transcript);
         final_span.innerHTML = linebreak(final_transcript);
         interim_span.innerHTML = linebreak(interim_transcript);
-        /*if (final_transcript || interim_transcript) {
-            showButtons('inline-block');
-        }*/
     };
 }
 
@@ -141,6 +139,7 @@ function capitalize(s) {
 function startButton(event) {
     if (recognizing) {
         recognition.stop()
+        start_button.style.color = 'black';
         return;
     }
     final_transcript = '';
@@ -149,7 +148,7 @@ function startButton(event) {
     ignore_onend = false;
     final_span.innerHTML = '';
     interim_span.innerHTML = '';
-    //start_img.src = 'mic-slash.gif';
+    start_button.style.color = 'red';
     showInfo('info_allow');
     start_timestamp = event.timeStamp;
 }
