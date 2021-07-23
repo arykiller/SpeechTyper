@@ -1,7 +1,6 @@
-﻿//identify array of languages and country to be add to the select tag
-var langs = [
-    ['Arabic', ['ar-IQ', 'Iraq'],
-        ['ar-EG', 'Egypt']
+﻿var langs = [
+    ['العربية', ['ar-IQ', 'العراق'],
+        ['ar-EG', 'مصر']
     ],
     ['English', ['en-US', 'United States'],
         ['en-GB', 'United Kingdom']
