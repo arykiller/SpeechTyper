@@ -14,6 +14,6 @@ A web page used to convert voice into text.
 
 ## License & Copyright
 
-© Ammar Talal
+© 2021 Ammar Talal
 
 Licensed under the [Apache License](LICENSE).
