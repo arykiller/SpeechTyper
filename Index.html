@@ -1,41 +1,75 @@
-﻿
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style.css" />
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="css\bootstrap.min.css" rel="stylesheet" >
+    <!-- My CSS -->
+    <link href="css\stylesheet.css" rel="stylesheet" >
+    <!-- Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>SpeechTyper</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Speech Typer...</h1>
-        <div class="lang_container">
-                <select id="select_language" onchange="updateCountry()"></select>
-                <select id="select_dialect"></select>
+
+    <title>SpeachTyper</title>
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="container position-absolute top-50 start-50 translate-middle">
+      <!-- Header Row -->
+        <div class="row justify-content-md-center">
+          <div class="col-md-4">
+            <h3 class="text-center"> Speech Typer.. <h3>
+          </div>
         </div>
-        <div id="info">
-            <p id="info_start">Click on the microphone icon and begin speaking.</p>
-            <p id="info_speak_now">Speak now.</p>
-            <p id="info_no_speech">No speech was detected. you may need to adjust your microphone settings.</p>
-            <p id="info_no_microphone">No microphone was found. Ensure that a microphone is installed and that microphone settings are configured correctly.</p>
-            <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
-            <p id="info_denied">Permission to use microphone was denied.</p>
-            <p id="info_blocked">Permission to use microphone is blocked.</p>
-            <p id="info_upgrade">SpeechTyper is not supported bt this browser.</p>
+      <!-- Language&Dialect Row -->
+        <div class="row justify-content-md-center ">
+          <div class="col-md-4 form-floating">
+            <select class="form-select" id="select_language" aria-label="Floating label select example" onchange="updateCountry()"></select>
+            <label for="select_language">Select Language:</label>
+          </div>
+          <div class="col-md-4 form-floating">
+            <select class="form-select" id="select_dialect"></select>
+            <label for="select_dialect">Select Dialect:</label>
+          </div>
         </div>
-        <div class="start_container">
-            <button class="roundButton" id="start_button" onclick="startButton(event)">
-                <i class="fa fa-microphone"></i>
-            </button>
+        <!-- Info Row -->
+        <div class="row justify-content-md-center">
+          <div id="info" class="col-md-auto text-center">
+            <p class="fs-5" id="info_start">Click on the microphone icon and begin speaking.</p>
+            <p class="fs-5" id="info_speak_now">Speak now.</p>
+            <p class="fs-5" id="info_no_speech">No speech was detected. you may need to adjust your microphone settings.</p>
+            <p class="fs-5" id="info_no_microphone">No microphone was found. Ensure that a microphone is installed and that microphone settings are configured correctly.</p>
+            <p class="fs-5" id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+            <p class="fs-5" id="info_denied">Permission to use microphone was denied.</p>
+            <p class="fs-5" id="info_blocked">Permission to use microphone is blocked.</p>
+            <p class="fs-5" id="info_upgrade">SpeechTyper is not supported bt this browser.</p>
+          </div>
         </div>
-        <div id="results">
-            <span id="final_span"></span>
-            <span id="interim_span"></span>
-            <p>
+        <!-- startButton Row -->
+        <div class = "row justify-content-md-center">
+          <div class="col-md-auto text-center">
+              <button class="roundButton" id="start_button" onclick="startButton(event)">
+                  <i class="fa fa-microphone"></i>
+              </button>
+          </div>
         </div>
+        <!-- results Row -->
+        <div class = "row justify-content-md-center">
+          <div id="results" class="col-md-8 text-center">
+              <span id="final_span"></span>
+              <span id="interim_span"></span>
+              <p>
+          </div>
+        </div>
+
     </div>
-    <script src="Script.js"></script>
-</body>
+
+     <!--Include all compiled plugins (below), or include individual files as needed-->
+    <script src="js\bootstrap.min.js"></script>
+
+    <!-- Voice To Text JavaScript -->
+    <script src="js\script.js"></script>
+
+  </body>
 </html>
