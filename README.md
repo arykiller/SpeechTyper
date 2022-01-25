@@ -2,7 +2,7 @@
 
 **Version 1.0**
 
-A web page used to convert voice into text.
+A web page used to convert voice into text. Using google API
 
 ---
 
